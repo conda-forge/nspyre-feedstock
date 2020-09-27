@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 70e3c20d5b4c065bc33c1af801c38c22ae11757b507b9088c210d27f99b6d094
+  sha256: 2919dbbbadb49f94df32df5b7a3083f8450d27e29e652f468680eac4590a5702
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - nspyre = nspyre.gui:main
     - nspyre-config = nspyre.config:main
@@ -43,7 +43,7 @@ requirements:
     - pyvisa >=1.10.1
     # Lantz
     - pint
-    - lantz >=0.5.3
+    - lantz >=0.6.0
     # Utilities
     - parse >=1.17.0
     - tqdm >=4.48.2
