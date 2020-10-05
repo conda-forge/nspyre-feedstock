@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 3dcc5fc56edd2954353b2edd22c7c14581a893d3b6b59fdacab479afc8f1fc8a
+  sha256: b58e183172149971c7d55b07ff49e6e367c39ca6ba98cecebde4221055c1cf1e
 
 build:
   noarch: python
-  number: 2
+  number: 3
   entry_points:
     - nspyre = nspyre.gui:main
     - nspyre-config = nspyre.config:main
