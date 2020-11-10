@@ -5,9 +5,13 @@ Home: https://github.com/nspyre-org/nspyre
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nspyre-feedstock/blob/master/LICENSE.txt)
 
 Summary: Pythonic Networked Scientific Experimentation Toolkit
+
+Development: https://github.com/nspyre-org/nspyre
+
+Documentation: https://nspyre.readthedocs.io/
 
 NSpyre is a Python Framework for conducting physics experiments.
 It uses a networked approach to allow for the running of experiments
