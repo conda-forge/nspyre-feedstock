@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 0
   entry_points:
     - nspyre = nspyre.gui:main
     - nspyre-config = nspyre.config:main
