@@ -15,8 +15,8 @@ build:
   entry_points:
     - nspyre = nspyre.gui:main
     - nspyre-config = nspyre.config:main
-    - nspyre-mongodb = nspyre.mongodb:main
     - nspyre-inserv = nspyre.inserv:main
+    - nspyre-mongodb = nspyre.mongodb:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -58,10 +58,10 @@ test:
     - nspyre.inserv
     - nspyre.misc
     - nspyre.mongodb
-    - nspyre.spyrelet
   commands:
     - nspyre --help
     - nspyre-config --help
+    - nspyre-inserv --help
     - nspyre-mongodb --help
   requires:
     - pip
