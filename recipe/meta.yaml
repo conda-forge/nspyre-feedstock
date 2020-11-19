@@ -55,7 +55,10 @@ test:
     - nspyre.config
     - nspyre.gui
     - nspyre.gui.widgets
-    - nspyre.utils
+    - nspyre.inserv
+    - nspyre.misc
+    - nspyre.mongodb
+    - nspyre.spyrelet
   commands:
     - nspyre --help
     - nspyre-config --help
