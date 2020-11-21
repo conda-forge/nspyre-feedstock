@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: bc920c636be78f609bb9b0bccbb29edc82895cf3e1aea790f9bcff06dcbe6c01
+  sha256: 48b518baffdb4bec702f2d6fc5c07a43aa71cdad2134d88ed203a80d23e51812
 
 build:
   noarch: python
@@ -21,10 +21,10 @@ build:
 
 requirements:
   host:
-    - python =3.8
+    - python >=3.8
     - pip
   run:
-    - python =3.8
+    - python >=3.8
     - pip
     - git
     - hub
