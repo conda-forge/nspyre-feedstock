@@ -59,11 +59,11 @@ test:
     - nspyre.inserv
     - nspyre.misc
     - nspyre.mongodb
-  commands:
-    - nspyre --help
-    - nspyre-config --help
-    - nspyre-inserv --help
-    - nspyre-mongodb --help
+#  commands:
+#    - nspyre --help
+#    - nspyre-config --help
+#    - nspyre-inserv --help
+#    - nspyre-mongodb --help
   requires:
     - pip
 
