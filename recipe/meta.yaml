@@ -1,5 +1,5 @@
 {% set name = "nspyre" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 48b518baffdb4bec702f2d6fc5c07a43aa71cdad2134d88ed203a80d23e51812
+  sha256: b5a36224e472dd11dbf33c2246d706b5f4044b461d460bb016bf5c741f986c21
 
 build:
   noarch: python
@@ -72,7 +72,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Pythonic Networked Scientific Experimentation Toolkit'
+  summary: Pythonic Networked Scientific Experimentation Toolkit
 
   description: |
     NSpyre is a Python Framework for conducting physics experiments.
