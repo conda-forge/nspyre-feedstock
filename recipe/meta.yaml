@@ -1,5 +1,5 @@
 {% set name = "nspyre" %}
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: b5a36224e472dd11dbf33c2246d706b5f4044b461d460bb016bf5c741f986c21
+  sha256: 6c10d14c80b80a309d80d5e2253c35e579043f8ca154482c75151c2ea4a31ecf
 
 build:
   noarch: python
