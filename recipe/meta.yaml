@@ -60,7 +60,7 @@ test:
     - nspyre.misc
     - nspyre.mongodb
   commands:
-    - nspyre --help
+#    - nspyre --help
     - nspyre-config --help
     - nspyre-inserv --help
     - nspyre-mongodb --help
