@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 78f08709ec94c3c4a557d37265e32fe9b87d8b0ed45af5aecf7bb050558ac911
+  sha256: fa6abbf3c19af3ae0c99aeb87079645a5e9b173122acabb1ad660e4a9d2da3b5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - nspyre = nspyre.gui:main
-    - nspyre-config = nspyre.config:main
+    - nspyre-config = nspyre.config.config_cli:main
     - nspyre-inserv = nspyre.inserv:main
     - nspyre-mongodb = nspyre.mongodb:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -59,11 +59,11 @@ test:
     - nspyre.inserv
     - nspyre.misc
     - nspyre.mongodb
-#  commands:
-#    - nspyre --help
-#    - nspyre-config --help
-#    - nspyre-inserv --help
-#    - nspyre-mongodb --help
+  commands:
+    - nspyre --help
+    - nspyre-config --help
+    - nspyre-inserv --help
+    - nspyre-mongodb --help
   requires:
     - pip
 
