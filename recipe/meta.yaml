@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - nspyre-inserv = nspyre.tools.inserv_cli:main',
     - nspyre-dataserv = nspyre.tools.dataserv_cli:main',
@@ -22,13 +22,14 @@ requirements:
     - python >=3.7
     - pip
   run:
+    - python >=3.7
     # you know it, you love it
-    - numpy >= 1.23.1
+    - numpy >=1.23.1
     # instrument server proxying
-    - rpyc >= 5.2.3
+    - rpyc >=5.2.3
     # Qt/GUI (won't install on ARM)
-    - pyqt >= 5.12; {{ target_platform }} != "aarch64" and {{ target_platform }} != "armv7l"
-    - pyqtgraph >= 0.13.1, < 0.14; {{ target_platform }} !="aarch64" and {{ target_platform }} != "armv7l"
+    - pyqt >=5.12;{{ target_platform }}!="aarch64"and{{ target_platform }}!="armv7l"
+    - pyqtgraph >=0.13.1, <0.14;{{ target_platform }}!="aarch64"and{{ target_platform }}!="armv7l"
 test:
   imports:
     - nspyre
