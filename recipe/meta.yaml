@@ -26,7 +26,7 @@ requirements:
     # you know it, you love it
     - numpy >=1.23.1
     # instrument server proxying
-    - rpyc >=5.2.3
+    - rpyc >=5
     # Qt/GUI
     - pyqt >=5.12
     - pyqtgraph >=0.13.1
