@@ -13,13 +13,12 @@ Development: https://github.com/nspyre-org/nspyre
 
 Documentation: https://nspyre.readthedocs.io/
 
-NSpyre is a Python Framework for conducting physics experiments.
-It uses a networked approach to allow for the running of experiments
-using distributed equipment over many networked systems. The
-experimental hardware being controlled can thus be connected to
-different computers, which can in turn be controlled by another
-machine running the experimental commands. This allows for the easy
-integration of shared resources in a research environment.
+nspyre is a Python package for conducting scientific experiments. It
+provides a set of tools to allow for control of instrumentation, data
+collection, real-time plotting, as well as GUI generation. Anyone in the
+research or industrial spaces using computer-controlled equipment and
+collecting data can potentially benefit from using nspyre to run their
+experiments.
 
 
 Current build status
