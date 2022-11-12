@@ -1,69 +1,40 @@
 {% set name = "nspyre" %}
-{% set version = "0.4.9" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ name }}-org/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 7cea9fcd4ac63932282b1210e93b85c18b734f167b8e2d4633116d167cc742bc
+  url: https://github.com/{{ name }}-org/{{ name }}/releases/v{{ version }}.tar.gz
+  sha256: 0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5
 
 build:
   noarch: python
   number: 0
   entry_points:
-    - nspyre = nspyre.gui:main
-    - nspyre-config = nspyre.config.config_cli:main
-    - nspyre-inserv = nspyre.inserv:main
-    - nspyre-mongodb = nspyre.mongodb:main
+    - nspyre-inserv = nspyre.tools.inserv_cli:main',
+    - nspyre-dataserv = nspyre.tools.dataserv_cli:main',
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.7
     - pip
   run:
-    - python >=3.8
-    - pip
-    - git
-    - hub
-    # SciPy
-    - numpy
-    - scipy
-    - pandas
-    # MongoDB
-    - mongodb >=4.0.3
-    - pymongo >=3.10.1
-    # Qt
-    - pyqt >=5.12.3
-    - pyqtgraph
-    - qscintilla2
-    # VISA
-    - pyvisa >=1.10.1
-    # Lantz
-    - pint
-    - pimpmyclass >=0.4.3
-    - lantz >=0.6.0
-    # Utilities
-    - parse >=1.17.0
-    - tqdm >=4.48.2
-    - rpyc >=4.1.5
-
+    # you know it, you love it
+    - numpy >= 1.23.1
+    # instrument server proxying
+    - rpyc >= 5.2.3
+    # Qt/GUI (won't install on ARM)
+    - pyqt >= 5.12; {{ target_platform }} != "aarch64" and {{ target_platform }} != "armv7l"
+    - pyqtgraph >= 0.13.1, < 0.14; {{ target_platform }} !="aarch64" and {{ target_platform }} != "armv7l"
 test:
   imports:
     - nspyre
-    - nspyre.config
-    - nspyre.gui
-    - nspyre.gui.widgets
-    - nspyre.inserv
-    - nspyre.misc
-    - nspyre.mongodb
   commands:
-#    - nspyre --help
-    - nspyre-config --help
     - nspyre-inserv --help
-    - nspyre-mongodb --help
+    - nspyre-dataserv --help
   requires:
     - pip
 
@@ -75,13 +46,12 @@ about:
   summary: Pythonic Networked Scientific Experimentation Toolkit
 
   description: |
-    NSpyre is a Python Framework for conducting physics experiments.
-    It uses a networked approach to allow for the running of experiments 
-    using distributed equipment over many networked systems. The 
-    experimental hardware being controlled can thus be connected to 
-    different computers, which can in turn be controlled by another 
-    machine running the experimental commands. This allows for the easy 
-    integration of shared resources in a research environment.
+    nspyre is a Python package for conducting scientific experiments. It 
+    provides a set of tools to allow for control of instrumentation, data 
+    collection, real-time plotting, as well as GUI generation. Anyone in the 
+    research or industrial spaces using computer-controlled equipment and 
+    collecting data can potentially benefit from using nspyre to run their 
+    experiments.
   doc_url: https://nspyre.readthedocs.io/
   dev_url: https://github.com/nspyre-org/nspyre
 
