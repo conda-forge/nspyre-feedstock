@@ -1,11 +1,11 @@
-About nspyre
-============
+About nspyre-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nspyre-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/nspyre-org/nspyre
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nspyre-feedstock/blob/main/LICENSE.txt)
 
 Summary: Pythonic Networked Scientific Experimentation Toolkit
 
