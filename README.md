@@ -7,19 +7,7 @@ Home: https://github.com/nspyre-org/nspyre
 
 Package license: BSD-3-Clause
 
-Summary: Pythonic Networked Scientific Experimentation Toolkit
-
-Development: https://github.com/nspyre-org/nspyre
-
-Documentation: https://nspyre.readthedocs.io/
-
-nspyre is a Python package for conducting scientific experiments. It
-provides a set of tools to allow for control of instrumentation, data
-collection, real-time plotting, as well as GUI generation. Anyone in the
-research or industrial spaces using computer-controlled equipment and
-collecting data can potentially benefit from using nspyre to run their
-experiments.
-
+Summary: Networked Scientific Python Research Environment.
 
 Current build status
 ====================
@@ -156,5 +144,4 @@ Feedstock Maintainers
 =====================
 
 * [@jacobfeder](https://github.com/jacobfeder/)
-* [@mtsolmn](https://github.com/mtsolmn/)
 
