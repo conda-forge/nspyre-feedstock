@@ -1,62 +1,60 @@
 {% set name = "nspyre" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ name }}-org/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 50e61824a0db7f16a805d48ddf60d9d58fe0c738a490a77f57d6a804722393c3
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nspyre-{{ version }}.tar.gz
+  sha256: 9146b9fa3c8b2576a02419303a6a0ece1a820b67aebb3b1e459066688c2f33f4
 
 build:
-  noarch: python
-  number: 0
   entry_points:
-    - nspyre-inserv = nspyre.tools.inserv_cli:main
-    - nspyre-dataserv = nspyre.tools.dataserv_cli:main
+    - nspyre-dataserv = nspyre.cli.dataserv:_main
+    - nspyre-inserv = nspyre.cli.inserv:_main
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.10,<4.0
+    - poetry-core
     - pip
   run:
-    - python >=3.7
-    # you know it, you love it
-    - numpy >=1.23.1
-    # instrument server proxying
-    - rpyc >=5
-    # Qt/GUI
-    - pyqt >=5.12
-    - pyqtgraph >=0.13.1
+    - python >=3.10.0,<4.0.0
+    - numpy >=1.23.0,<2.0.0
+    - rpyc >=5.2.3,<6.0.0
+    - pyqt >=5.12.3,<7.0.0
+    - pyqtgraph >=0.13.1,<0.14.0
+  run_constrained:
+    - pre-commit *
+    - sphinx *
+    - sphinx-copybutton *
+    - sphinx_rtd_theme *
+    - sphinx-autoapi *
+    - pytest *
+    - pytest-cov *
+    - pint *
+    - poetry2setup *
+
 test:
   imports:
     - nspyre
   commands:
-    - nspyre-inserv --help
+    - pip check
     - nspyre-dataserv --help
+    - nspyre-inserv --help
   requires:
     - pip
 
 about:
   home: https://github.com/nspyre-org/nspyre
+  summary: Networked Scientific Python Research Environment.
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
-  summary: Pythonic Networked Scientific Experimentation Toolkit
-
-  description: |
-    nspyre is a Python package for conducting scientific experiments. It 
-    provides a set of tools to allow for control of instrumentation, data 
-    collection, real-time plotting, as well as GUI generation. Anyone in the 
-    research or industrial spaces using computer-controlled equipment and 
-    collecting data can potentially benefit from using nspyre to run their 
-    experiments.
-  doc_url: https://nspyre.readthedocs.io/
-  dev_url: https://github.com/nspyre-org/nspyre
 
 extra:
   recipe-maintainers:
-    - mtsolmn
     - jacobfeder
