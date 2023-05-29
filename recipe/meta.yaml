@@ -1,5 +1,5 @@
 {% set name = "nspyre" %}
-{% set version = "0.6.0.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -10,12 +10,12 @@ source:
   sha256: 50e61824a0db7f16a805d48ddf60d9d58fe0c738a490a77f57d6a804722393c3
 
 build:
+  noarch: python
+  number: 2
   entry_points:
     - nspyre-dataserv = nspyre.cli.dataserv:_main
     - nspyre-inserv = nspyre.cli.inserv:_main
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
 
 requirements:
   host:
@@ -28,22 +28,11 @@ requirements:
     - rpyc >=5.2.3,<6.0.0
     - pyqt >=5.12.3,<7.0.0
     - pyqtgraph >=0.13.1,<0.14.0
-  run_constrained:
-    - pre-commit *
-    - sphinx *
-    - sphinx-copybutton *
-    - sphinx_rtd_theme *
-    - sphinx-autoapi *
-    - pytest *
-    - pytest-cov *
-    - pint *
-    - poetry2setup *
 
 test:
   imports:
     - nspyre
   commands:
-    - pip check
     - nspyre-dataserv --help
     - nspyre-inserv --help
   requires:
@@ -51,9 +40,15 @@ test:
 
 about:
   home: https://github.com/nspyre-org/nspyre
-  summary: Networked Scientific Python Research Environment.
   license: BSD-3-Clause
   license_file: LICENSE
+  summary: (n)etworked (s)cientific (p)ython (r)esearch (e)nvironment
+  description: |
+    nspyre is a Python package for conducting scientific experiments. It provides 
+    a set of tools to allow for control of instrumentation, data collection, 
+    real-time plotting, as well as GUI generation.
+  doc_url: https://nspyre.readthedocs.io/
+  dev_url: https://github.com/nspyre-org/nspyre
 
 extra:
   recipe-maintainers:
