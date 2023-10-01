@@ -1,24 +1,21 @@
-About nspyre
-============
+About nspyre-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nspyre-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/nspyre-org/nspyre
 
 Package license: BSD-3-Clause
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nspyre-feedstock/blob/main/LICENSE.txt)
-
-Summary: Pythonic Networked Scientific Experimentation Toolkit
+Summary: (n)etworked (s)cientific (p)ython (r)esearch (e)nvironment
 
 Development: https://github.com/nspyre-org/nspyre
 
 Documentation: https://nspyre.readthedocs.io/
 
-nspyre is a Python package for conducting scientific experiments. It
-provides a set of tools to allow for control of instrumentation, data
-collection, real-time plotting, as well as GUI generation. Anyone in the
-research or industrial spaces using computer-controlled equipment and
-collecting data can potentially benefit from using nspyre to run their
-experiments.
+nspyre is a Python package for conducting scientific experiments. It provides
+a set of tools to allow for control of instrumentation, data collection,
+real-time plotting, as well as GUI generation.
 
 
 Current build status
@@ -156,5 +153,4 @@ Feedstock Maintainers
 =====================
 
 * [@jacobfeder](https://github.com/jacobfeder/)
-* [@mtsolmn](https://github.com/mtsolmn/)
 
