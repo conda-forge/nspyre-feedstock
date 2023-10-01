@@ -1,5 +1,5 @@
 {% set name = "nspyre" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/nspyre-org/nspyre/archive/v{{ version }}.tar.gz
-  sha256: 50e61824a0db7f16a805d48ddf60d9d58fe0c738a490a77f57d6a804722393c3
+  sha256: 7b1396b642bb5dbfb0e6a29de34240eb3c66f886f8733a5be4e23fa20b37dfa0
 
 build:
   noarch: python
-  number: 2
+  number: 0
   entry_points:
     - nspyre-dataserv = nspyre.cli.dataserv:_main
     - nspyre-inserv = nspyre.cli.inserv:_main
