@@ -1,3 +1,4 @@
+{% set python_min = '3.10.0' %}
 {% set name = "nspyre" %}
 {% set version = "0.6.1" %}
 
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - nspyre-dataserv = nspyre.cli.dataserv:_main
     - nspyre-inserv = nspyre.cli.inserv:_main
@@ -19,11 +20,11 @@ build:
 
 requirements:
   host:
-    - python >=3.10,<4.0
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.10.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - numpy >=1.23.0,<2.0.0
     - rpyc >=5.2.3,<6.0.0
     - pyqt >=5.12.3,<7.0.0
@@ -37,6 +38,7 @@ test:
     - nspyre-inserv --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nspyre-org/nspyre
